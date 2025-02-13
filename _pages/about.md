@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-Working at LIPN in équipe ~~MoLoToV~~ LoCal under the supervision of [Damiano Mazza](https://lipn.univ-paris13.fr/~mazza) and Jean-Baptiste Joinet on a categorical approach to descriptive complexity. 
+Working at LIPN in team ~~MoLoToV~~ LoCal under the supervision of [Damiano Mazza](https://lipn.univ-paris13.fr/~mazza) and Jean-Baptiste Joinet on a categorical approach to descriptive complexity. 

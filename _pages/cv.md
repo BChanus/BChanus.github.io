@@ -19,7 +19,8 @@ Education
 * 2018-2019 Undergraduate, ENS Paris-Saclay, Cachan
 * 2016-2018 Preparatory classes - Lycée Cézanne, Aix-en-provence
 
-  [TeX version](https://bchanus.github.io/files/cv.pdf) (in french)
+  [TeX version](https://bchanus.github.io/files/cv.pdf) (french)
+
 Publications
 ======
   <ul>{% for post in site.publications %}

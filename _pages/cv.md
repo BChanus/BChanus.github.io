@@ -11,31 +11,15 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 
-Work experience
-======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2022-Now PhD thesis in Computer Science, Université Sorbonne Paris Nord, Villetaneuse
+* 2018-2022 Master's Degree, ENS's cursus, ENS Paris-Saclay, Cachan
+* 2021-2022 Master's degree in Philosophy of sciences, LOPHISC, Université Panthéon-Sorbonne, Paris
+* 2019-2021 Master's degree in Computer Science, MPRI, Université Paris-Cité, Paris
+* 2018-2019 Undergraduate, ENS Paris-Saclay, Cachan
+* 2016-2018 Preparatory classes - Lycée Cézanne, Aix-en-provence
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
 Publications
 ======
   <ul>{% for post in site.publications %}
@@ -54,6 +38,3 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams

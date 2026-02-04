@@ -3,8 +3,8 @@ title: "Unifying Boolean and Algebraic Descriptive Complexity."
 collection: publications
 permalink: /publication/2025-bool-alg-desc-comp
 category: conference
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
+excerpt: 'We introduce ultrarings, which simultaneously generalize commutative rings and Boolean lextensive categories. As such, they allow to blend together standard algebraic notions (from commutative algebra) and logical notions (from categorical logic), providing a unifying descriptive framework in which complexity classes over arbitrary rings (as in the Blum, Schub, Smale model) and usual, Boolean complexity classes may be captured in a uniform way.'
+date: 2025
 venue: 'Proceedings of FSCD, LIPIcs 337, 13:1-13:22'
 paperurl: 'https://bchanus.github.io/files/UnifDescComp.pdf'
 bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'

@@ -12,12 +12,6 @@ citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 
 ---
 [Download paper here](https://bchanus.github.io/files/UnifDescComp.pdf)
 
-Bibtex citation:        '@inproceedings{ChanusMazzaRogers:FSCD2025,
-                        author = {Baptiste Chanus and Damiano Mazza and Morgan Rogers},
-                        title = {Unifying Boolean and Algebraic Descriptive Complexity},
-                        booktitle = {Proceedings of {FSCD}},
-                        pages = {10:1--10:22},
-                        year = {2025},
-                        }'
+
 
 

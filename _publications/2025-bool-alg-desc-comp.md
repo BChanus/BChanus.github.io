@@ -3,7 +3,7 @@ title: "Unifying Boolean and Algebraic Descriptive Complexity."
 collection: publications
 permalink: /publication/2025-bool-alg-desc-comp
 category: conference
-excerpt: 'We introduce ultrarings, which simultaneously generalize commutative rings and Boolean lextensive categories. Providing a unifying descriptive framework in which complexity classes over arbitrary rings may be captured in a uniform way.'
+excerpt: 'We introduce ultrarings, which simultaneously generalize commutative rings and Boolean lextensive categories.'
 date: 2025
 venue: 'Proceedings of FSCD, LIPIcs 337, 13:1-13:22'
 paperurl: 'https://bchanus.github.io/files/UnifDescComp.pdf'

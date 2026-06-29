@@ -955,10 +955,9 @@
       <h3 id="toc-ii-2-cycle-de-vie" onclick="goToHeading('ii-2-cycle-de-vie')">II.2 : Cycle de vie</h3>
       <h2 id="toc-iii-impacts-ecologiques-de-chaque-phase" onclick="goToHeading('iii-impacts-ecologiques-de-chaque-phase')">III : Impacts écologiques de chaque phase</h2>
       <h3 id="toc-iii-1-collecte-des-donnees" onclick="goToHeading('iii-1-collecte-des-donnees')">III.1 : Collecte des données</h3>
-      <h3 id="toc-iii-2-bandwidth-infrastructure-energy" onclick="goToHeading('iii-2-bandwidth-infrastructure-energy')">III.2 : Bandwidth Infrastructure Energy</h3>
-      <h3 id="toc-iii-3-pre-entrainement" onclick="goToHeading('iii-3-pre-entrainement')">III.3 : Pré-entraînement</h3>
-      <h3 id="toc-iii-4-entrainement-renforcement-alignement" onclick="goToHeading('iii-4-entrainement-renforcement-alignement')">III.4 : Entraînement/Renforcement/Alignement</h3>
-      <h3 id="toc-iii-5-inference" onclick="goToHeading('iii-5-inference')">III.5 : Inférence</h3>
+      <h3 id="toc-iii-2-pre-entrainement" onclick="goToHeading('iii-2-pre-entrainement')">III.2 : Pré-entraînement</h3>
+      <h3 id="toc-iii-3-entrainement-renforcement-alignement" onclick="goToHeading('iii-3-entrainement-renforcement-alignement')">III.3 : Entraînement/Renforcement/Alignement</h3>
+      <h3 id="toc-iii-4-inference" onclick="goToHeading('iii-4-inference')">III.4 : Inférence</h3>
       <h2 id="toc-iv-infrastructure" onclick="goToHeading('iv-infrastructure')">IV : Infrastructure</h2>
       <h3 id="toc-iv-1-datacenters" onclick="goToHeading('iv-1-datacenters')">IV.1 : Datacenters</h3>
       <h3 id="toc-iv-2-puces" onclick="goToHeading('iv-2-puces')">IV.2 : Puces</h3>
@@ -1279,19 +1278,14 @@
         </ol>
         <hr/>
         <p><strong>Résumé :</strong></p>
-        <p><strong>Scaling to AI training datasets:</strong></p>
-        <p><strong>GPT-4</strong> reportedly trained on ~13 trillion tokens (estimated 5-10 billion web pages scraped).</p>
-        <p>5 billion pages × 119 tons / billion = <strong>595 metric tons CO₂</strong> from scraping alone.</p>
-        <p><strong>Doesn't include training compute</strong> (which dwarfs scraping—GPT-3 training estimated 552 tons CO₂, GPT-4 likely 10-50× higher).</p>
-        <p><strong>Scraping represents 2-5% of total AI model carbon footprint.</strong></p>
-        <p>Small percentage, but absolute tonnage is significant (equivalent to hundreds of households).</p>
-        <p><strong>Training is one-time</strong> (retrain every 12-18 months).</p>
-        <p><strong>Scraping is continuous</strong> (Perplexity, real-time answer engines scrape constantly for fresh data).</p>
-        <p><strong>Annual scraping emissions for answer engine:</strong></p>
-        <p>If engine scrapes 100M pages/day for current information:</p>
-        <p>365 days × 100M pages/day = 36.5 billion pages/year</p>
-        <p>36.5 × 119 tons / billion = <strong>4,343 tons CO₂/year</strong> from scraping alone.</p>
-        <p><strong>Exceeds one-time training cost if model lifespan</strong><strong>years.</strong></p>
+        <p>Étape de scraping :</p>
+        <ul>
+          <li><strong>GPT-4</strong> ra été entraîné sur ~13 milliards de tokens (soit 5-10 billion de pages web).</li>
+          <li>5 milliards de pages × 119 tonnes / milliard de page = <strong>595 tonnes de CO₂</strong></li>
+          <li><strong>2-5% de l'empreinte carbonne de l'IA</strong></li>
+          <li>L'entraînement c'est une fois (réentraînement tous les 12-18 mois) le scraping c'est continu (Perplexity, spécialisé dans la réponse à partir de données sourcées scrape en continue).</li>
+          <li>Imaginons que le scraping représente 100M de pages/jour, ça fait 36.5 milliards de pages par an. Donc 4 343 tonnes de CO₂ par an. <strong>Ça dépasse l'entraînement si le modèle vit moins de 2 ans</strong></li>
+        </ul>
         <p><a data-id="3" class="footnote-link">3</a></p>
         <hr/>
         <p><strong>Crawlers :</strong></p>
@@ -1350,33 +1344,8 @@
         <p><strong>Annual:</strong> 259 kWh</p>
         <p><strong>Carbon (U.S. grid):</strong> 100 kg CO₂/year</p>
         <p><strong>Seems small, but scales:</strong> 1,000 publishers experiencing this = 100 tons CO₂/year collectively.</p>
-        <h3 id="iii-2-bandwidth-infrastructure-energy">III.2 : Bandwidth Infrastructure Energy</h3>
-        <p><strong>CDNs consume power.</strong></p>
-        <p><strong>Cloudflare</strong>, <strong>Fastly</strong>, <strong>Akamai</strong> operate global edge networks (hundreds of PoPs—points of presence).</p>
-        <p><strong>Each PoP:</strong></p>
-        <ul>
-          <li>Servers (caching content)</li>
-          <li>Network gear</li>
-          <li>Cooling</li>
-        </ul>
-        <p><strong>CDN energy model:</strong></p>
-        <p>Serving 1TB from CDN ≈ 15-20 kWh (includes all infrastructure overhead)</p>
-        <p><strong>If AI crawlers consume 500GB/month from your CDN:</strong></p>
-        <p>0.5 TB × 18 kWh/TB = 9 kWh/month</p>
-        <p><strong>Carbon:</strong> 3.5 kg CO₂/month = 42 kg/year</p>
-        <p><strong>Small per publisher, but CDNs serve thousands of publishers.</strong></p>
-        <p><strong>Aggregate CDN energy serving AI crawlers (industry estimate):</strong></p>
-        <p>AI crawler traffic = 5% of global CDN traffic</p>
-        <p>Global CDN traffic = ~200 exabytes/month</p>
-        <p>AI crawlers = 10 exabytes/month</p>
-        <p>10 million TB × 18 kWh/TB = 180 million kWh/month</p>
-        <p><strong>Annual carbon:</strong> 833,000 metric tons CO₂</p>
-        <p><strong>For comparison:</strong> 180,000 passenger vehicles/year.</p>
-        <p>
-          <a href="https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact" target="_blank">https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact</a>
-        </p>
         <hr/>
-        <h3 id="iii-3-pre-entrainement">III.3 : Pré-entraînement</h3>
+        <h3 id="iii-2-pre-entrainement">III.2 : Pré-entraînement</h3>
         <p>Consommation électrique :</p>
         <ul>
           <li>GPT-3 : 1.3 GWh</li>
@@ -1397,10 +1366,10 @@
         </ul>
         <p><a data-id="6" class="footnote-link">6</a></p>
         <hr/>
-        <h3 id="iii-4-entrainement-renforcement-alignement">III.4 : Entraînement/Renforcement/Alignement</h3>
+        <h3 id="iii-3-entrainement-renforcement-alignement">III.3 : Entraînement/Renforcement/Alignement</h3>
         <p>A priori moins problématique que l'entraînement en terme de consommation d'énergie, d'eau, de minerais mais se fait au prix de travail humain <a data-id="7" class="footnote-link">7</a></p>
         <hr/>
-        <h3 id="iii-5-inference">III.5 : Inférence</h3>
+        <h3 id="iii-4-inference">III.4 : Inférence</h3>
         <ul>
           <li>Actuellement, il est estimé que ChatGPT reçoit 2.5 milliard de prompts par jour <a data-id="8" class="footnote-link">8</a></li>
           <li>Représente 80-90% de l'énergie totale utilisée par l'IA</li>

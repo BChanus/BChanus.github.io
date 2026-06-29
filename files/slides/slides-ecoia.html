@@ -948,7 +948,7 @@
       <h1 id="toc-impacts-ecologiques-de-lia" onclick="goToHeading('impacts-ecologiques-de-lia')">Impacts Écologiques de l'IA</h1>
       <h2 id="toc-i-introduction-aux-termes-techniques" onclick="goToHeading('i-introduction-aux-termes-techniques')">I : Introduction aux termes techniques</h2>
       <h3 id="toc-i-1-definitions" onclick="goToHeading('i-1-definitions')">I.1 : Définitions</h3>
-      <h3 id="toc-i-2-au-cems" onclick="goToHeading('i-2-au-cems')">I.2 : Au CEMS</h3>
+      <h3 id="toc-i-2-au-cems-comme-ailleurs" onclick="goToHeading('i-2-au-cems-comme-ailleurs')">I.2 : Au CEMS comme ailleurs</h3>
       <h3 id="toc-i-3-schema-recapitulatif" onclick="goToHeading('i-3-schema-recapitulatif')">I.3 : Schéma récapitulatif</h3>
       <h2 id="toc-ii-zoom-sur-les-chatbots-bases-sur-llm" onclick="goToHeading('ii-zoom-sur-les-chatbots-bases-sur-llm')">II : Zoom sur les chatbots basés sur LLM</h2>
       <h3 id="toc-ii-1-termes-techniques" onclick="goToHeading('ii-1-termes-techniques')">II.1 : Termes techniques</h3>
@@ -957,7 +957,7 @@
       <h3 id="toc-iii-1-collecte-des-donnees" onclick="goToHeading('iii-1-collecte-des-donnees')">III.1 : Collecte des données</h3>
       <h3 id="toc-iii-2-bandwidth-infrastructure-energy" onclick="goToHeading('iii-2-bandwidth-infrastructure-energy')">III.2 : Bandwidth Infrastructure Energy</h3>
       <h3 id="toc-iii-3-pre-entrainement" onclick="goToHeading('iii-3-pre-entrainement')">III.3 : Pré-entraînement</h3>
-      <h3 id="toc-iii-4-entrainement" onclick="goToHeading('iii-4-entrainement')">III.4 : Entraînement</h3>
+      <h3 id="toc-iii-4-entrainement-renforcement-alignement" onclick="goToHeading('iii-4-entrainement-renforcement-alignement')">III.4 : Entraînement/Renforcement/Alignement</h3>
       <h3 id="toc-iii-5-inference" onclick="goToHeading('iii-5-inference')">III.5 : Inférence</h3>
       <h2 id="toc-iv-infrastructure" onclick="goToHeading('iv-infrastructure')">IV : Infrastructure</h2>
       <h3 id="toc-iv-1-datacenters" onclick="goToHeading('iv-1-datacenters')">IV.1 : Datacenters</h3>
@@ -993,7 +993,7 @@
           <li>Les chatbots "génératifs" (LLM-based) : Génèrent du texte token par token via un LLM. Nécessitent une infrastructure GPU importante.</li>
         </ul>
         <hr/>
-        <h3 id="i-2-au-cems">I.2 : Au CEMS</h3>
+        <h3 id="i-2-au-cems-comme-ailleurs">I.2 : Au CEMS comme ailleurs</h3>
         <p>L'usage omniprésent : les chatbots basés sur des LLM.</p>
         <quote>
           <p>Generative AI accounted for over 20% of the global AI market in 2026, and is projected to reach 40% by 2030. <a data-id="1" class="footnote-link">1</a></p>
@@ -1397,34 +1397,12 @@
         </ul>
         <p><a data-id="6" class="footnote-link">6</a></p>
         <hr/>
-        <h3 id="iii-4-entrainement">III.4 : Entraînement</h3>
-        <p>A priori moins pbmatique que l'entraînement écologiquement mais se fait à coup de travail humain</p>
-        <ul>
-          <li>
-            Qu'est-ce que le RLHF ?
-            Reinforcement Learning from Human Feedback : technique introduite par Ziegler et al. (2019) et popularisée par InstructGPT (2022). Fait converger le modèle vers des réponses jugées utiles et sûres par des humains.
-          </li>
-          <li>
-            Étapes du RLHF
-            <ul>
-              <li>1. Supervised Fine-Tuning (SFT) sur des exemples de haute qualité.</li>
-              <li>2. Entraînement d'un modèle de récompense (reward model) sur des préférences humaines.</li>
-              <li>3. Optimisation PPO pour maximiser la récompense.</li>
-            </ul>
-          </li>
-          <li>
-            Coût humain (et écologique indirect)
-            Des annotateurs humains (souvent au Kenya, aux Philippines, en Inde) comparent des paires de réponses. Time Magazine (2023) : Sama/OpenAI au Kenya → travailleurs sous-payés exposés à des contenus traumatisants. Coût humain et géopolitique non négligeable.
-          </li>
-          <li>
-            RLAIF : vers une automatisation
-            Reinforcement Learning from AI Feedback : remplace une partie des annotateurs par un autre LLM. Réduit le coût humain mais augmente la consommation de calcul.
-          </li>
-        </ul>
+        <h3 id="iii-4-entrainement-renforcement-alignement">III.4 : Entraînement/Renforcement/Alignement</h3>
+        <p>A priori moins problématique que l'entraînement en terme de consommation d'énergie, d'eau, de minerais mais se fait au prix de travail humain <a data-id="7" class="footnote-link">7</a></p>
         <hr/>
         <h3 id="iii-5-inference">III.5 : Inférence</h3>
         <ul>
-          <li>Actuellement, il est estimé que ChatGPT reçoit 2.5 milliard de prompts par jour <a data-id="7" class="footnote-link">7</a></li>
+          <li>Actuellement, il est estimé que ChatGPT reçoit 2.5 milliard de prompts par jour <a data-id="8" class="footnote-link">8</a></li>
           <li>Représente 80-90% de l'énergie totale utilisée par l'IA</li>
           <li>0.42Wh par prompt devient 383 GWh à l'échelle de ChatGPT</li>
           <li>Les chiffres augmentent significativement si on compte l'intégration dans d'autres outils (ex Google Search) :  ChatGPT a 380 millions d'uilisateurs actifs, Google Search 5 milliards (pour 14-16 milliards de recherches par jour) or Google inclut par défaut des résumés, recommandations, et réponses contextuelles générée par IA (aussi le cas des autres moteurs de recherche)</li>
@@ -1457,38 +1435,38 @@
         <h3 id="iv-1-datacenters">IV.1 : Datacenters</h3>
         <p><strong>Les datacenters au global en 2025 :</strong></p>
         <ul>
-          <li>448TWh <a data-id="8" class="footnote-link">8</a></li>
-          <li>Projection 2030 : 945 TWh <a data-id="9" class="footnote-link">9</a></li>
-          <li>4.5 billions (en français) de litres d'eau <a data-id="10" class="footnote-link">10</a></li>
+          <li>448TWh <a data-id="9" class="footnote-link">9</a></li>
+          <li>Projection 2030 : 945 TWh <a data-id="10" class="footnote-link">10</a></li>
+          <li>4.5 billions (en français) de litres d'eau <a data-id="11" class="footnote-link">11</a></li>
           <li>Projection 2030 : 9.3 billions des litre d'eau</li>
-          <li>6 900 km² recouvert <a data-id="11" class="footnote-link">11</a></li>
+          <li>6 900 km² recouvert <a data-id="12" class="footnote-link">12</a></li>
           <li>Projection 2030 : 14 500 km²</li>
         </ul>
         <hr/>
         <p><strong>L'IA :</strong></p>
         <ul>
-          <li>20% de l'usage d'électricité des datacenters : 93TWh <a data-id="12" class="footnote-link">12</a></li>
+          <li>20% de l'usage d'électricité des datacenters : 93TWh <a data-id="13" class="footnote-link">13</a></li>
           <li>Projection : 40% d'ici 2030, soit 378 TWh</li>
         </ul>
         <hr/>
         <h3 id="iv-2-puces">IV.2 : Puces</h3>
-        <p>Les puces contiennent de nombreux métaux rares (lithium, cobalt,  silicone, cuivre, tantalum, neodymium, terbium etc), l'augmentation de leur demande intensifie l'activité minière qui est très consommatrice d'eau à proximité des mines, de sols et d'énergie, <a data-id="13" class="footnote-link">13</a>, augmente la pollution des sols, la déforestation, la pollution des rivières dans des régions comme l'Asie de l'est, l'Afrique, l'Amérique du sud. <a data-id="14" class="footnote-link">14</a>. Parmis les autres risques on compte l'introduction d'espèces "invasives" et d'effets à long terme sur les écosystèmes aquatiques <a data-id="15" class="footnote-link">15</a></p>
+        <p>Les puces contiennent de nombreux métaux rares (lithium, cobalt,  silicone, cuivre, tantalum, neodymium, terbium etc), l'augmentation de leur demande intensifie l'activité minière qui est très consommatrice d'eau à proximité des mines, de sols et d'énergie, <a data-id="14" class="footnote-link">14</a>, augmente la pollution des sols, la déforestation, la pollution des rivières dans des régions comme l'Asie de l'est, l'Afrique, l'Amérique du sud. <a data-id="15" class="footnote-link">15</a>. Parmis les autres risques on compte l'introduction d'espèces "invasives" et d'effets à long terme sur les écosystèmes aquatiques <a data-id="16" class="footnote-link">16</a></p>
         <hr/>
-        <p>La fabrication des puces demandent une industrie spécialisée également très couteuse en eau (milliard de litres) <a data-id="16" class="footnote-link">16</a>, au point d'avoir causé une sécheresse à Taiwan <a data-id="17" class="footnote-link">17</a>, avec des risques similaires en Arizona <a data-id="18" class="footnote-link">18</a> et dont certains coproduits comme le tetrachloride de silicon pose un risque de pollution</p>
+        <p>La fabrication des puces demandent une industrie spécialisée également très couteuse en eau (milliard de litres) <a data-id="17" class="footnote-link">17</a>, au point d'avoir causé une sécheresse à Taiwan <a data-id="18" class="footnote-link">18</a>, avec des risques similaires en Arizona <a data-id="19" class="footnote-link">19</a> et dont certains coproduits comme le tetrachloride de silicon pose un risque de pollution</p>
         <hr/>
-        <p>Le remplacement de ces puces est augmentent pour passer d'une durée de vie de 5-6 ans, à 2-3 ans avec NVIDIA qui est passé sur un cycle d'innovation annuel <a data-id="19" class="footnote-link">19</a></p>
-        <p>La quantité de déchet généré est estimée être d'ici 2030 autour de 2.5 millions de tonnes de "e-déchets"/an <a data-id="20" class="footnote-link">20</a> qui contiennent (entre autres) du plomb, du cadmium et du mercure. Ces déchets sont majoritairement envoyés dans les pays du "sud global" <a data-id="21" class="footnote-link">21</a></p>
+        <p>Le remplacement de ces puces est augmentent pour passer d'une durée de vie de 5-6 ans, à 2-3 ans avec NVIDIA qui est passé sur un cycle d'innovation annuel <a data-id="20" class="footnote-link">20</a></p>
+        <p>La quantité de déchet généré est estimée être d'ici 2030 autour de 2.5 millions de tonnes de "e-déchets"/an <a data-id="21" class="footnote-link">21</a> qui contiennent (entre autres) du plomb, du cadmium et du mercure. Ces déchets sont majoritairement envoyés dans les pays du "sud global" <a data-id="22" class="footnote-link">22</a></p>
         <hr/>
         <h3 id="iv-3-biodiversite-et-sols">IV.3 : Biodiversité et sols</h3>
         <p>Assèchement :</p>
         <ul>
-          <li>Datacenters dans des régions déjà touchées par la sécheresse : Google's Mesa en Arizona (5.5 milliards de litres/an)<a data-id="22" class="footnote-link">22</a> ou Amazon en Aragon (755 millions de litres/an) <a data-id="23" class="footnote-link">23</a></li>
+          <li>Datacenters dans des régions déjà touchées par la sécheresse : Google's Mesa en Arizona (5.5 milliards de litres/an)<a data-id="23" class="footnote-link">23</a> ou Amazon en Aragon (755 millions de litres/an) <a data-id="24" class="footnote-link">24</a></li>
           <li>Même quand l'eau est captée puis rendue cela peut provoquer des dégâts aux milieux aquatiques (surtout dans les zones arides avec peu de réserves souterraines)</li>
         </ul>
         <hr/>
         <p>Artificialisation et destruction d'habitat :</p>
         <ul>
-          <li>Pollution sonore (niveau d'infrason dangereux pour les humains et animaux) <a data-id="24" class="footnote-link">24</a></li>
+          <li>Pollution sonore (niveau d'infrason dangereux pour les humains et animaux) <a data-id="25" class="footnote-link">25</a></li>
           <li>Rejets illégaux de méthanes</li>
           <li>Coïncide avec les zones de forte biodiversité en péri-urbain de par la proximité avec les axes de transports et les infrastructures électriques et de réseau : altération des micro-climats, îlots de chaleurs, artificialisation des sols</li>
         </ul>
@@ -1515,7 +1493,7 @@
         <hr/>
         <h3 id="v-1-sujets-laisses-de-cote">V.1 : Sujets laissés de côté</h3>
         <ul>
-          <li>Exploitation des données personnelles <a data-id="25" class="footnote-link">25</a></li>
+          <li>Exploitation des données personnelles <a data-id="26" class="footnote-link">26</a></li>
           <li>Exploitation des travailleur.euse.s</li>
         </ul>
         <hr/>
@@ -1610,51 +1588,52 @@
             <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
             . https://doi.org/10.53328/INR26RMA002
           </li>
-          <li id="footnote-7" class="footnote">
+          <li id="footnote-7" class="footnote"> https://www.youtube.com/watch?v=ND7owjmtPNo</li>
+          <li id="footnote-8" class="footnote">
             Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
             <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
             . https://doi.org/10.53328/INR26RMA002
           </li>
-          <li id="footnote-8" class="footnote"> Ordre de grandeur: si c'était un pays ce serait le 11e plus consommateur, juste derrière la France (468TWh)</li>
-          <li id="footnote-9" class="footnote"> Ordre de grandeur : 3% de l'utilisation mondiale, 6e pays le plus consommateur</li>
-          <li id="footnote-10" class="footnote"> Ordre de grandeur : 1.8 millions de piscines olympiques</li>
-          <li id="footnote-11" class="footnote"> Ordre de grandeur : ~45x Paris intra-muros</li>
-          <li id="footnote-12" class="footnote"> Ordre de grandeur : 39e pays le plus consommateur devant la Finland 83TWh et la Belgique 82 TWh</li>
-          <li id="footnote-13" class="footnote"> « Extracting these materials is energyintensive and environmentally damaging, often depleting water sources and polluting ecosystems43. At the end of their lifecycle, AI systems generate hazardous e-waste. When improperly managed, this waste exposes frontline communities—especially in the Global South—to toxic substances. » (Aczel et al., 2026, p. 24)</li>
-          <li id="footnote-14" class="footnote">
+          <li id="footnote-9" class="footnote"> Ordre de grandeur: si c'était un pays ce serait le 11e plus consommateur, juste derrière la France (468TWh)</li>
+          <li id="footnote-10" class="footnote"> Ordre de grandeur : 3% de l'utilisation mondiale, 6e pays le plus consommateur</li>
+          <li id="footnote-11" class="footnote"> Ordre de grandeur : 1.8 millions de piscines olympiques</li>
+          <li id="footnote-12" class="footnote"> Ordre de grandeur : ~45x Paris intra-muros</li>
+          <li id="footnote-13" class="footnote"> Ordre de grandeur : 39e pays le plus consommateur devant la Finland 83TWh et la Belgique 82 TWh</li>
+          <li id="footnote-14" class="footnote"> « Extracting these materials is energyintensive and environmentally damaging, often depleting water sources and polluting ecosystems43. At the end of their lifecycle, AI systems generate hazardous e-waste. When improperly managed, this waste exposes frontline communities—especially in the Global South—to toxic substances. » (Aczel et al., 2026, p. 24)</li>
+          <li id="footnote-15" class="footnote">
             Hlabisa, S. (2025). The ecology of artificial intelligence: energy, water, materials, and land limits of digital systems. 
             <emph>Carbon Neutral Systems</emph>
             , 
             <emph>1</emph>
             (1), 19. https://doi.org/10.1007/s44438-025-00018-8
           </li>
-          <li id="footnote-15" class="footnote"> Edwards DP, Sloan S, Weng L, Dirks P, Sayer J, Laurance WF (2014) Mining and the African environment. Conserv Lett 7(3):302–311. https://doi.org/10. 1111/conl.12076</li>
-          <li id="footnote-16" class="footnote">
+          <li id="footnote-16" class="footnote"> Edwards DP, Sloan S, Weng L, Dirks P, Sayer J, Laurance WF (2014) Mining and the African environment. Conserv Lett 7(3):302–311. https://doi.org/10. 1111/conl.12076</li>
+          <li id="footnote-17" class="footnote">
             Hlabisa, S. (2025). The ecology of artificial intelligence: energy, water, materials, and land limits of digital systems. 
             <emph>Carbon Neutral Systems</emph>
             , 
             <emph>1</emph>
             (1), 19. https://doi.org/10.1007/s44438-025-00018-8
           </li>
-          <li id="footnote-17" class="footnote"> Narvaez, L. (2022). Technical Report: Taiwan drought – Interconnected disaster risks 2021/2022. UNU Collections. Available at: https://collections.unu. edu/view/UNU:9027</li>
-          <li id="footnote-18" class="footnote"> Lepawsky J (2024) Climate change induced water stress and future semiconductor supply chain risk. iScience 27(2):108791. https://doi.org/10.1016/j. isci.2024.108791</li>
-          <li id="footnote-19" class="footnote"> https://www.generation-nt.com/actualites/gpu-depreciation-ia-nvidia-michael-burry-datacenter-2066297</li>
-          <li id="footnote-20" class="footnote"> Ordre de grandeur : 250 Tour Eiffel</li>
-          <li id="footnote-21" class="footnote">
+          <li id="footnote-18" class="footnote"> Narvaez, L. (2022). Technical Report: Taiwan drought – Interconnected disaster risks 2021/2022. UNU Collections. Available at: https://collections.unu. edu/view/UNU:9027</li>
+          <li id="footnote-19" class="footnote"> Lepawsky J (2024) Climate change induced water stress and future semiconductor supply chain risk. iScience 27(2):108791. https://doi.org/10.1016/j. isci.2024.108791</li>
+          <li id="footnote-20" class="footnote"> https://www.generation-nt.com/actualites/gpu-depreciation-ia-nvidia-michael-burry-datacenter-2066297</li>
+          <li id="footnote-21" class="footnote"> Ordre de grandeur : 250 Tour Eiffel</li>
+          <li id="footnote-22" class="footnote">
             Obringer, R., Rachunok, B., Maia-Silva, D., Arbabzadeh, M., Nateghi, R., & Madani, K. (4 C.E.). The overlooked environmental footprint of increasing Internet use. 
             <emph>Resources, Conservation and Recycling</emph>
             , 
             <emph>167</emph>
             , 105389. https://doi.org/10.1016/j.resconrec.2020.105
           </li>
-          <li id="footnote-22" class="footnote">
+          <li id="footnote-23" class="footnote">
             Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
             <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
             . https://doi.org/10.53328/INR26RMA002
           </li>
-          <li id="footnote-23" class="footnote"> https://lareleveetlapeste.fr/ia-les-data-centers-transforment-les-territoires-en-deserts/</li>
-          <li id="footnote-24" class="footnote"> https://www.youtube.com/watch?v=_bP80DEAbuo</li>
-          <li id="footnote-25" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
+          <li id="footnote-24" class="footnote"> https://lareleveetlapeste.fr/ia-les-data-centers-transforment-les-territoires-en-deserts/</li>
+          <li id="footnote-25" class="footnote"> https://www.youtube.com/watch?v=_bP80DEAbuo</li>
+          <li id="footnote-26" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
         </ol>
       </div>
       <div id="board-notes" class="invisible">
@@ -1677,51 +1656,52 @@
             <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
             . https://doi.org/10.53328/INR26RMA002
           </li>
-          <li id="footnote-7" class="footnote">
+          <li id="footnote-7" class="footnote"> https://www.youtube.com/watch?v=ND7owjmtPNo</li>
+          <li id="footnote-8" class="footnote">
             Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
             <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
             . https://doi.org/10.53328/INR26RMA002
           </li>
-          <li id="footnote-8" class="footnote"> Ordre de grandeur: si c'était un pays ce serait le 11e plus consommateur, juste derrière la France (468TWh)</li>
-          <li id="footnote-9" class="footnote"> Ordre de grandeur : 3% de l'utilisation mondiale, 6e pays le plus consommateur</li>
-          <li id="footnote-10" class="footnote"> Ordre de grandeur : 1.8 millions de piscines olympiques</li>
-          <li id="footnote-11" class="footnote"> Ordre de grandeur : ~45x Paris intra-muros</li>
-          <li id="footnote-12" class="footnote"> Ordre de grandeur : 39e pays le plus consommateur devant la Finland 83TWh et la Belgique 82 TWh</li>
-          <li id="footnote-13" class="footnote"> « Extracting these materials is energyintensive and environmentally damaging, often depleting water sources and polluting ecosystems43. At the end of their lifecycle, AI systems generate hazardous e-waste. When improperly managed, this waste exposes frontline communities—especially in the Global South—to toxic substances. » (Aczel et al., 2026, p. 24)</li>
-          <li id="footnote-14" class="footnote">
+          <li id="footnote-9" class="footnote"> Ordre de grandeur: si c'était un pays ce serait le 11e plus consommateur, juste derrière la France (468TWh)</li>
+          <li id="footnote-10" class="footnote"> Ordre de grandeur : 3% de l'utilisation mondiale, 6e pays le plus consommateur</li>
+          <li id="footnote-11" class="footnote"> Ordre de grandeur : 1.8 millions de piscines olympiques</li>
+          <li id="footnote-12" class="footnote"> Ordre de grandeur : ~45x Paris intra-muros</li>
+          <li id="footnote-13" class="footnote"> Ordre de grandeur : 39e pays le plus consommateur devant la Finland 83TWh et la Belgique 82 TWh</li>
+          <li id="footnote-14" class="footnote"> « Extracting these materials is energyintensive and environmentally damaging, often depleting water sources and polluting ecosystems43. At the end of their lifecycle, AI systems generate hazardous e-waste. When improperly managed, this waste exposes frontline communities—especially in the Global South—to toxic substances. » (Aczel et al., 2026, p. 24)</li>
+          <li id="footnote-15" class="footnote">
             Hlabisa, S. (2025). The ecology of artificial intelligence: energy, water, materials, and land limits of digital systems. 
             <emph>Carbon Neutral Systems</emph>
             , 
             <emph>1</emph>
             (1), 19. https://doi.org/10.1007/s44438-025-00018-8
           </li>
-          <li id="footnote-15" class="footnote"> Edwards DP, Sloan S, Weng L, Dirks P, Sayer J, Laurance WF (2014) Mining and the African environment. Conserv Lett 7(3):302–311. https://doi.org/10. 1111/conl.12076</li>
-          <li id="footnote-16" class="footnote">
+          <li id="footnote-16" class="footnote"> Edwards DP, Sloan S, Weng L, Dirks P, Sayer J, Laurance WF (2014) Mining and the African environment. Conserv Lett 7(3):302–311. https://doi.org/10. 1111/conl.12076</li>
+          <li id="footnote-17" class="footnote">
             Hlabisa, S. (2025). The ecology of artificial intelligence: energy, water, materials, and land limits of digital systems. 
             <emph>Carbon Neutral Systems</emph>
             , 
             <emph>1</emph>
             (1), 19. https://doi.org/10.1007/s44438-025-00018-8
           </li>
-          <li id="footnote-17" class="footnote"> Narvaez, L. (2022). Technical Report: Taiwan drought – Interconnected disaster risks 2021/2022. UNU Collections. Available at: https://collections.unu. edu/view/UNU:9027</li>
-          <li id="footnote-18" class="footnote"> Lepawsky J (2024) Climate change induced water stress and future semiconductor supply chain risk. iScience 27(2):108791. https://doi.org/10.1016/j. isci.2024.108791</li>
-          <li id="footnote-19" class="footnote"> https://www.generation-nt.com/actualites/gpu-depreciation-ia-nvidia-michael-burry-datacenter-2066297</li>
-          <li id="footnote-20" class="footnote"> Ordre de grandeur : 250 Tour Eiffel</li>
-          <li id="footnote-21" class="footnote">
+          <li id="footnote-18" class="footnote"> Narvaez, L. (2022). Technical Report: Taiwan drought – Interconnected disaster risks 2021/2022. UNU Collections. Available at: https://collections.unu. edu/view/UNU:9027</li>
+          <li id="footnote-19" class="footnote"> Lepawsky J (2024) Climate change induced water stress and future semiconductor supply chain risk. iScience 27(2):108791. https://doi.org/10.1016/j. isci.2024.108791</li>
+          <li id="footnote-20" class="footnote"> https://www.generation-nt.com/actualites/gpu-depreciation-ia-nvidia-michael-burry-datacenter-2066297</li>
+          <li id="footnote-21" class="footnote"> Ordre de grandeur : 250 Tour Eiffel</li>
+          <li id="footnote-22" class="footnote">
             Obringer, R., Rachunok, B., Maia-Silva, D., Arbabzadeh, M., Nateghi, R., & Madani, K. (4 C.E.). The overlooked environmental footprint of increasing Internet use. 
             <emph>Resources, Conservation and Recycling</emph>
             , 
             <emph>167</emph>
             , 105389. https://doi.org/10.1016/j.resconrec.2020.105
           </li>
-          <li id="footnote-22" class="footnote">
+          <li id="footnote-23" class="footnote">
             Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
             <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
             . https://doi.org/10.53328/INR26RMA002
           </li>
-          <li id="footnote-23" class="footnote"> https://lareleveetlapeste.fr/ia-les-data-centers-transforment-les-territoires-en-deserts/</li>
-          <li id="footnote-24" class="footnote"> https://www.youtube.com/watch?v=_bP80DEAbuo</li>
-          <li id="footnote-25" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
+          <li id="footnote-24" class="footnote"> https://lareleveetlapeste.fr/ia-les-data-centers-transforment-les-territoires-en-deserts/</li>
+          <li id="footnote-25" class="footnote"> https://www.youtube.com/watch?v=_bP80DEAbuo</li>
+          <li id="footnote-26" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
         </ol>
       </div>
     </main>

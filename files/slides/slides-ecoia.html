@@ -1281,12 +1281,26 @@
           <li><strong>Stockage</strong> (archivage des données d'entraînement) <a data-id="2" class="footnote-link">2</a></li>
         </ol>
         <hr/>
-        <p><strong>Chiffres par milliard de page scrapées :</strong><a data-id="3" class="footnote-link">3</a></p>
+        <p><strong>Résumé :</strong></p>
+        <p><strong>Scaling to AI training datasets:</strong></p>
+        <p><strong>GPT-4</strong> reportedly trained on ~13 trillion tokens (estimated 5-10 billion web pages scraped).</p>
+        <p>5 billion pages × 119 tons / billion = <strong>595 metric tons CO₂</strong> from scraping alone.</p>
+        <p><strong>Doesn't include training compute</strong> (which dwarfs scraping—GPT-3 training estimated 552 tons CO₂, GPT-4 likely 10-50× higher).</p>
+        <p><strong>Scraping represents 2-5% of total AI model carbon footprint.</strong></p>
+        <p>Small percentage, but absolute tonnage is significant (equivalent to hundreds of households).</p>
+        <p><strong>Training is one-time</strong> (retrain every 12-18 months).</p>
+        <p><strong>Scraping is continuous</strong> (Perplexity, real-time answer engines scrape constantly for fresh data).</p>
+        <p><strong>Annual scraping emissions for answer engine:</strong></p>
+        <p>If engine scrapes 100M pages/day for current information:</p>
+        <p>365 days × 100M pages/day = 36.5 billion pages/year</p>
+        <p>36.5 × 119 tons / billion = <strong>4,343 tons CO₂/year</strong> from scraping alone.</p>
+        <p><strong>Exceeds one-time training cost if model lifespan</strong><strong>years.</strong></p>
+        <p><a data-id="3" class="footnote-link">3</a></p>
         <hr/>
         <p><strong>Crawlers :</strong></p>
         <ul>
           <li>Estimation: 1 requête = 0.01 CPU-seconds = 0.0001 kWh</li>
-          <li>1 milliard de requêtes × 0.0001 kWh = 100,000 kWh</li>
+          <li>1 milliard de requêtes × 0.0001 kWh = 100 000 kWh</li>
         </ul>
         <quote>
           <p><strong>Power Usage Effectiveness (PUE):</strong> Ratio de l'énergie utilisée par les data centers sur l'énergie utilisée uniquement par le matériel informatique</p>
@@ -1294,43 +1308,31 @@
         <p>1.6  de <strong>PUE</strong> en moyenne dans l'industrie (pour 1 kWh dépensé pour les serveurs, 0.6 kWh sont dépensés pour le refroidissement et autre), 1.1-1.2 pour les plus optimisée (Google/Microsoft)</p>
         <p>Donc pour les crawlers :</p>
         <ul>
-          <li>100,000 kWh × 1.2 PUE = 120,000 kWh total</li>
+          <li>100 000 kWh × 1.2 PUE = 120 000 kWh total</li>
         </ul>
         <p><strong>Émission de carbonne (sur le réseau US):</strong></p>
         <ul>
-          <li>120,000 kWh × 0.386 kg CO₂/kWh = 46,320 kg CO₂</li>
+          <li>120 000 kWh × 0.386 kg CO₂/kWh = 46 320 kg CO₂</li>
         </ul>
         <p><strong>GPT-4</strong> s'est entraîné sur 13 billions (en français) de tokens (soit 5-10 milliards de pages web scrapées).</p>
-        <p>5-10 milliards de page × 46,320 kg CO₂ / billion = <strong>231,6-463.2 metric tons CO₂</strong> due au scraping.</p>
+        <p>5-10 milliards de page × 46 320 kg CO₂ / milliard de page = <strong>231.6-463.2 metric tons CO₂</strong> due au scraping.</p>
         <hr/>
         <p><strong>Réseau:</strong></p>
-        <p>Page : 150KB transferred</p>
-        <p>1 billion pages × 150KB = 150TB data transfer</p>
-        <p>Network equipment energy: ~0.06 kWh/GB</p>
-        <p>150,000 GB × 0.06 kWh = 9,000 kWh</p>
-        <p><strong>Internet infrastructure isn't free energetically.</strong></p>
-        <p><strong>Transmission pathway:</strong></p>
-        <p>Publisher server → ISP core router → internet backbone → AI company datacenter</p>
-        <p><strong>Each hop consumes energy:</strong></p>
-        <p><strong>Routers:</strong> 500W - 2kW per high-capacity router</p>
-        <p><strong>Switches:</strong> 200W - 500W</p>
-        <p><strong>Cables:</strong> Minimal (optical fiber carries light with negligible resistance), but amplifiers/repeaters needed every 50-100km</p>
-        <p><strong>Energy model (simplified):</strong></p>
-        <p>Data transfer energy = (data volume in GB) × (network energy intensity)</p>
-        <p><strong>Network energy intensity:</strong> ~0.05-0.10 kWh/GB (varies by infrastructure efficiency)</p>
-        <p><strong>Example:</strong></p>
-        <p>AI crawler downloads 10TB monthly from your site.</p>
-        <p>10,000 GB × 0.06 kWh/GB = 600 kWh</p>
-        <p><strong>Carbon:</strong> 600 kWh × 0.386 kg = 231.6 kg CO₂/month</p>
-        <p><strong>Annual:</strong> 2,779 kg CO₂ (~2.8 tons)</p>
-        <p><strong>Aggregate across all publishers:</strong></p>
-        <p>If AI company scrapes 1,000 publishers at 10TB each = 10PB transferred</p>
-        <p>10,000,000 GB × 0.06 kWh/GB = 600,000 kWh</p>
-        <p><strong>Carbon:</strong> 231,600 kg CO₂/month = 2.78 million kg/year (~2,780 tons)</p>
-        <p><strong>Publisher server load:</strong></p>
-        <p>Processing request: 0.02 CPU-seconds = 0.0002 kWh</p>
-        <p>1 billion requests × 0.0002 kWh = 200,000 kWh</p>
-        <p><strong>Total crawling energy:</strong> 309,000 kWh per billion pages</p>
+        <p>Serveur hébergeur → Router du fournisseur d'accès → Réseau internet → Datacenter de l'entreprise IA</p>
+        <ul>
+          <li><strong>Routers:</strong> 500W - 2kW per high-capacity router</li>
+          <li><strong>Switches:</strong> 200W - 500W</li>
+          <li><strong>Cables:</strong> négligeable  (les fibres optiques n'induisent pas de perte d'énergie), mais amplificateurs/répéteurs tous les 50-100km</li>
+          <li><strong>Modèle énergétique (simplifié):</strong> Data transfer energy = (volume de données in GB) × (intensité énegétique du réseau) où l'intensité énergétique du réseau vaut ~0.05-0.10 kWh/GB, en moyenne ~0.06 kWh/GB</li>
+          <li><strong>Par page, en moyenne</strong> : 150KB, soit pour 1 milliard pages × 150KB = 150TB</li>
+          <li><strong>Pour GPT-4</strong> : 5-10 × 150 000 GB ×  0.06 kWh/GB = 45 000-90 000 kWh × 0.386 kg CO₂ / kWh = 17 370-34 740 kg CO₂</li>
+        </ul>
+        <hr/>
+        <p><strong>Charge de l'hébergeur:</strong></p>
+        <ul>
+          <li><strong>Gérer une requête</strong>: 0.02 CPU-seconds = 0.0002 kWh, soit pour 1 milliard de requêtes × 0.0002 kWh = 200 000 kWh</li>
+          <li><strong>Total crawling energy:</strong> 309,000 kWh per billion pages</li>
+        </ul>
         <p><strong>Carbon emissions (U.S. grid average 0.386 kg CO₂/kWh):</strong></p>
         <p>309,000 kWh × 0.386 kg = 119,274 kg CO₂ (~119 metric tons)</p>
         <p><strong>Typical scenario:</strong></p>
@@ -1351,10 +1353,6 @@
         <p><strong>Annual:</strong> 259 kWh</p>
         <p><strong>Carbon (U.S. grid):</strong> 100 kg CO₂/year</p>
         <p><strong>Seems small, but scales:</strong> 1,000 publishers experiencing this = 100 tons CO₂/year collectively.</p>
-        <p><strong>Scaling to AI training datasets:</strong></p>
-        <p><strong>GPT-4</strong> reportedly trained on ~13 trillion tokens (estimated 5-10 billion web pages scraped).</p>
-        <p>5 billion pages × 119 tons / billion = <strong>595 metric tons CO₂</strong> from scraping alone.</p>
-        <p><strong>Doesn't include training compute</strong> (which dwarfs scraping—GPT-3 training estimated 552 tons CO₂, GPT-4 likely 10-50× higher).</p>
         <h3 id="iii-2-bandwidth-infrastructure-energy">III.2 : Bandwidth Infrastructure Energy</h3>
         <p><strong>CDNs consume power.</strong></p>
         <p><strong>Cloudflare</strong>, <strong>Fastly</strong>, <strong>Akamai</strong> operate global edge networks (hundreds of PoPs—points of presence).</p>
@@ -1377,42 +1375,11 @@
         <p>10 million TB × 18 kWh/TB = 180 million kWh/month</p>
         <p><strong>Annual carbon:</strong> 833,000 metric tons CO₂</p>
         <p><strong>For comparison:</strong> 180,000 passenger vehicles/year.</p>
-        <p><strong>Scraping represents 2-5% of total AI model carbon footprint.</strong></p>
-        <p>Small percentage, but absolute tonnage is significant (equivalent to hundreds of households).</p>
-        <p><strong>Training is one-time</strong> (retrain every 12-18 months).</p>
-        <p><strong>Scraping is continuous</strong> (Perplexity, real-time answer engines scrape constantly for fresh data).</p>
-        <p><strong>Annual scraping emissions for answer engine:</strong></p>
-        <p>If engine scrapes 100M pages/day for current information:</p>
-        <p>365 days × 100M pages/day = 36.5 billion pages/year</p>
-        <p>36.5 × 119 tons / billion = <strong>4,343 tons CO₂/year</strong> from scraping alone.</p>
-        <p><strong>Exceeds one-time training cost if model lifespan</strong><strong>years.</strong></p>
         <p>
           <a href="https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact" target="_blank">https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact</a>
         </p>
         <hr/>
         <h3 id="iii-3-pre-entrainement">III.3 : Pré-entraînement</h3>
-        <ul>
-          <li>
-            Objectif : apprendre des représentations générales du langage
-            Tâche d'auto-supervision : prédire le prochain token dans une séquence (Causal Language Modeling) ou reconstruire des tokens masqués (BERT-style).
-          </li>
-          <li>
-            Données mobilisées
-            GPT-3 : ~300 milliards tokens (570 Go de données texte compressées). Llama 3 : ~15 000 milliards tokens. Common Crawl, Wikipedia, GitHub, arXiv, livres.
-          </li>
-          <li>
-            Infrastructure nécessaire
-            GPT-3 (175B params) : ~1 000 GPU A100 pendant plusieurs semaines. GPT-4 : estimation >25 000 GPU A100 (non confirmé par OpenAI). Coût estimé : 50 à 100 millions USD.
-          </li>
-          <li>
-            Empreinte carbone estimée du pré-entraînement
-            Entraîner GPT-3 : ~552 tonnes CO₂eq (Strubell 2019 extrapolé). GPT-4 : estimations > 5 000 tCO₂eq selon plusieurs chercheurs. Données non publiées par OpenAI.
-          </li>
-          <li>
-            GPT-3 et la consommation d'eau à l'entraînement
-            Li, P. et al. (2023, arXiv) estiment que l'entraînement de GPT-3 dans les data centers Microsoft a nécessité ~700 000 litres d'eau. GPT-4 : estimation > 5 millions de litres non confirmée.
-          </li>
-        </ul>
         <p>For example, GPT-3 training consumed an estimated 1.3 GWh of electricity over 34 days, while GPT-4 is estimated to have consumed 50 to 70 GWh over 100 days, roughly 40 to 55 times GPT-3.</p>
         <p>The training of frontier models demands immense energy. GPT-4 likely consumed 50 to 70 GWh of electricity over 100 days, roughly 40–55 times more than GPT-3 (1.287 GWh over a 34-day period). [@aczelEnvironmentalCostAIs2026]</p>
         <p>GPT-4’s training carbon footprint of 25,000 tonnes of CO2e would require the sequestration capacity of 420,000 tree seedlings grown for 10 years, or about equal to the number of trees in 105 Hyde Parks in London.</p>

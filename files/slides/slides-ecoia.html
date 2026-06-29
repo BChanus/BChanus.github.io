@@ -1380,22 +1380,23 @@
         </p>
         <hr/>
         <h3 id="iii-3-pre-entrainement">III.3 : Pré-entraînement</h3>
-        <p>For example, GPT-3 training consumed an estimated 1.3 GWh of electricity over 34 days, while GPT-4 is estimated to have consumed 50 to 70 GWh over 100 days, roughly 40 to 55 times GPT-3.</p>
-        <p>The training of frontier models demands immense energy. GPT-4 likely consumed 50 to 70 GWh of electricity over 100 days, roughly 40–55 times more than GPT-3 (1.287 GWh over a 34-day period). [@aczelEnvironmentalCostAIs2026]</p>
-        <p>GPT-4’s training carbon footprint of 25,000 tonnes of CO2e would require the sequestration capacity of 420,000 tree seedlings grown for 10 years, or about equal to the number of trees in 105 Hyde Parks in London.</p>
-        <p>The water footprint associated with training GPT-4 was about 600 million liters, enough to meet the minimum annual domestic water needs of 81,000 people in Sub-Saharan Africa, or to fill 237 Olympic-sized pools.</p>
-        <p>Projections for models like GPT-5 suggest training electricity requirements of 100 GWh, equivalent to the annual residential electricity usage of 770,000 people in Sub-Saharan Africa.</p>
-        <p>Training models like GPT-5 is estimated to have a carbon footprint of 42,000 tonnes of CO2e, requiring 700,000 tree seedlings (about equal to the number of trees in 40 Central Parks in New York or 155 times the trees in Toronto’s High Park over 10 years to offset).</p>
-        <p>The water footprint of GPT-5 training is estimated at 1 billion liters, enough to meet the annual domestic water needs of more than 135,000 people in SubSaharan Africa.</p>
-        <p>The water footprint of GPT-5 training is estimated at 1 billion liters, enough to meet the annual domestic water needs of more than 135,000 people in SubSaharan Africa.</p>
-        <p>As new frontier models emerge, energy used in training continues to vary widely. Meta’s LLaMA 3–405B, released in 2024, reportedly consumed 21 GWh of electricity, equivalent to nearly 31 million GPU-hours of compute54.</p>
-        <p>Released in late 2024, the Chinesedeveloped model DeepSeek-V-3 required 80-90% less compute for training than Meta’s LLaMA, but this information remains unverified54,55.</p>
-        <p>A recent example of improved transparency comes from OpenAI’s release of GPT-OSS-120B, a 120 billion parameter open-source model intended to give the research community a high-performing public baseline. Its model card includes architecture details, training data composition and notably, energy consumption, enabling estimation of associated carbon, water, and land footprints. The reported 2.5 million kWh of energy used for training makes the environmental footprints of GPT-OSS-120B almost 30 times smaller than those of GPT-4.</p>
         <p>
-          These examples show both the scale of training required for large models and the variability across different architectures. While efficiency gains can reduce the energy used per model, falling costs lead to wider deployment of AI across products and services—potentially increasing overall AI demand and use. This phenomenon is known as the rebound effect (or Jevons Paradox).
-          AI tools are becoming embedded across everyday systems, from search engines and smartphones to logistics platforms, industrial control systems, and household devices. This widespread integration drives rapid growth in aggregate compute demand, which can outweigh per-task efficiency improvements.
+          Consommation électrique :
+          - GPT-3 : 1.3 GWh
+          - DeepSeek-V-3 (2024): 2.1-4.2 GWh (selon leur document technique)
+          - Meta’s LLaMA 3–405B (2024): 21 GWh
+          - GPT-4 : 50-70 GWh (40-55x plus que GPT-3)
+          - GPT-5 (estimation) : 100GWh (1.5-2x plus que GPT-4)
         </p>
-        <p>[@aczelEnvironmentalCostAIs2026]</p>
+        <p>
+          Gaz à effet de serre :
+          - GPT-4 : 25 000 tonnes de CO2e (CO2 equivalent) <a data-id="4" class="footnote-link">4</a> - GPT-5 (estimation) : 42 000 tonnes de CO2e
+        </p>
+        <p>
+          Eau :
+          - GPT-4 : 600 millions de litres <a data-id="5" class="footnote-link">5</a> - GPT-5 (estimation) : 1 milliards de litres
+        </p>
+        <p><a data-id="6" class="footnote-link">6</a></p>
         <hr/>
         <h3 id="iii-4-entrainement">III.4 : Entraînement</h3>
         <p>A priori moins pbmatique que l'entraînement écologiquement mais se fait à coup de travail humain</p>
@@ -1424,54 +1425,33 @@
         <hr/>
         <h3 id="iii-5-inference">III.5 : Inférence</h3>
         <ul>
-          <li>
-            Optimisations techniques au déploiement
-            Quantization : réduction de la précision des poids (FP32 → INT8 → INT4). Distillation : entraîner un petit modèle à imiter un grand. Pruning, compilation. Objectif : réduire latence et coût par requête.
-          </li>
-          <li>
-            Inférence : la phase qui dure
-            Pour un modèle populaire comme ChatGPT, l'inférence (répondre à des millions de requêtes/jour) cumule plus d'émissions sur sa durée de vie que l'entraînement. Estimation : 100 millions de requêtes/jour pour ChatGPT en 2023.
-          </li>
-          <li>
-            Consommation par requête
-            Goldman Sachs (2023) : une requête ChatGPT consomme ~10x plus d'énergie qu'une recherche Google (0,3 Wh vs 0,003 Wh). Luccioni et al. (2023) : GPT-4 génère 0,001 à 0,03 kg CO₂ par requête selon la longueur.
-          </li>
-          <li>
-            Scaling des data centers
-            Microsoft, Google, Amazon investissent massivement : Microsoft prévoit 80 Mds USD en data centers pour 2024. L'électricité des data centers IA devrait tripler d'ici 2030 selon l'IEA (2024).
-            -> parler un peu de ce chiffre de 0.3Wh de la requête qui est trompeur : cache le fait qu'on fait aussi plus que ce qu'on aurait fait
-            -> parler également de la complexité en n² et des tailles de contexte qui augmente
-            -> parler du matériel qui vieillit plus vite (et qu'on produit pour)
-          </li>
-          <li>
-            L'eau à l'inférence
-            Li et al. (2023) : une conversation de 20-50 questions avec ChatGPT consomme ~0,5 litre d'eau (refroidissement indirect). À l'échelle de 100 millions d'utilisateurs, l'ordre de grandeur devient celui de villes entières.
-          </li>
-          <li>
-            Localisation des data centers et stress hydrique
-            Virginia, Arizona, Texas, Pays-Bas : zones à fort stress hydrique abritant des data centers majeurs. Tensions croissantes avec les agriculteurs et les communautés locales. Exemple : data centers à Mesa, Arizona, ville en stress hydrique chronique.
-            -> carte de la localisation des datacenters ????
-          </li>
-          <li>
-            Water Usage Effectiveness (WUE)
-            WUE = Volume d'eau consommé (litres) / Énergie IT (kWh). Google moyenne : ~1,1 L/kWh (2022). Microsoft : ~0,5 L/kWh (hiver) à 3 L/kWh (été, refroidissement évaporatif). Un data center de 100 MW peut consommer 1 à 5 millions de litres d'eau par jour.
-          </li>
+          <li>Actuellement, il est estimé que ChatGPT reçoit 2.5 milliard de prompts par jour <a data-id="7" class="footnote-link">7</a></li>
+          <li>Représente 80-90% de l'énergie totale utilisée par l'IA</li>
+          <li>0.42Wh par prompt devient 383 GWh à l'échelle de ChatGPT</li>
+          <li>Les chiffres augmentent significativement si on compte l'intégration dans d'autres outils (ex Google Search) :  ChatGPT a 380 millions d'uilisateurs actifs, Google Search 5 milliards (pour 14-16 milliards de recherches par jour) or Google inclut par défaut des résumés, recommandations, et réponses contextuelles générée par IA (aussi le cas des autres moteurs de recherche)</li>
+          <li>Une recherche internet coûte autour de 0.3Wh, avec un LLM estimation à 10x plus</li>
+          <li>La plupart des usages de ChatGPT est dans la catégorie des usages "lourds" (assistance, recherche d'information, écriture)</li>
         </ul>
-        <p>Currently, ChatGPT processes an estimated 2.5 billion prompts per day. [@aczelEnvironmentalCostAIs2026]</p>
-        <p>While training is highly resource-intensive, the continuous inference phase used to generate responses for billions of interactions is estimated to account for 80% to 90% of total AI energy use.</p>
-        <p>A typical ChatGPT-style text query is about 200 times more energy-intensive than text classification (such as spam filtering).</p>
-        <p>At scale, small pertask costs become infrastructure-level loads: at a conservative 0.42 Wh per text prompt, ChatGPTscale use translates into roughly 383 GWh of electricity per year.</p>
-        <p>The numbers grow drastically once the AI embedded in mass platforms (such as Google Search) is counted. Crucially, per-use energy varies by orders of magnitude across modalities and output lengths, so product defaults and user choices are footprint determinants. A typical ChatGPT-style query is about 200 times more energy-intensive than basic text classification; long GPT-style responses can cost around 1,000 times more than text classification</p>
-        <p>While around 380 million people actively use dedicated AI tools, the number increases dramatically when platforms like Google Search are included65. With over 5 billion Google Search users and about 14-16 billion searches conducted each day66, AI is now deeply embedded in features such as summaries, recommendations, and contextual responses. As a result, Google alone engages over a billion people in AI-assisted interactions each day67.</p>
-        <p>And even within a single task, complexity varies: model size, context window, prompt length, output length, and other settings can substantially shift the per-query energy use. Model choice matters as each AI model performs each task with a different energy and environmental cost. Even when using the same AI platform, users' choices of which model to run (e.g., Instant vs. Thinking) can change the energy use. Model choice also makes the location of AI operations relevant, because the same watt-hour carries different carbon, water, and land footprints depending on the grid that supplies it.</p>
-        <p>Text classification tasks such as spam filtering or basic sentiment analysis sip energy. Short  text interactions generally consume the least energy. Extractive question-answering systems that simply retrieve short snippets from documents (for example, ChatGPT, Claude, or Gemini used purely as retrieval tools) are in the same range.</p>
-        <p>-> À lié à l'atelier méthodo et la classification de texte</p>
-        <p>Even image-classification models such as Google Vision or Azure Computer Vision remain relatively light: they use only a few times more energy per image than text classification and are still orders of magnitude below high-end generative models. Object-detection models, which identify and localize multiple objects in a scene, are somewhat heavier but still on the “low-energy” side of the spectrum compared to text- or video-generation models.</p>
-        <p>Short-form text generation (brief answers or summaries) sits higher on the energy spectrum. A compact LLM generating a few sentences uses a few hundredths of a watthour per query, roughly two dozen times more energy than a spam-filter-style classification, but still modest in absolute terms. Larger, general-purpose LLMs such as GPT-3-scale models use roughly an order of magnitude more energy again. A typical “mainstream” ChatGPT-style query is about 200 times more energy-intensive than basic classification, and long GPT-4 and GPT-5-style responses with extended context windows can approach 1,000 times the classification baseline. State-of-theart LLMs span roughly 0.3 to more than 10 Wh per query depending on model size, prompt length, and deployment settings, a range of over one to two orders of magnitude even within text-only tasks44,68–71 .</p>
-        <p>A conventional web search without an LLM component is often assumed to cost around 0.3 Wh of electricity per query75. With an estimated 5 trillion annual searches76, this amounts to roughly 1.5 TWh of electricity annually. If each of those searches were upgraded to an AI-enhanced mode that used 3 Wh per query, ten times the energy of a conventional search, the annual energy demand would rise to about 15 TWh</p>
-        <p>Other generative answer engines consume more energy: recent analyses report LLM queries in the range of 0.05–0.3 Wh each for standard prompt lengths and model sizes77. The key takeaway is retrieval-style AI search can approach the efficiency of conventional search, but generative search features that produce new text can quickly raise energy per query—and when multiplied by billions of queries, these differences compound dramatically.</p>
-        <p>Model choice is not the only variable defining how we use AI. Even the length and structure of prompts, users’ expectations and output settings, and form of user interactions matter. A typical conversational response of a language model can use about 200 times more energy than a classification task and roughly 8 to 10 times more than short-form text generation. Longer or more elaborate responses push this further, reaching around 500 to 1,000 times the energy of classification while still performing the same basic function of text generation. In practice, model choice plus response length can easily drive differences of up to two orders of magnitude across everyday text interactions.</p>
-        <p>Most ChatGPT use falls into high-volume categories such as practical guidance, information seeking, and writing. Because inference energy scales with tokens processed, reducing verbosity can yield material savings at platform scale. As an illustrative scenario, if a concise mode reduced tokens by about 30% for common interactions, cutting per-query energy by roughly 25%, assuming an average 0.42 Wh per prompt and 16–18 billion weekly queries, would save roughly 87–98 GWh of electricity per year</p>
+        <hr/>
+        <p>
+          Différence selon le type de requête :
+          - Classification de texte (analyse de sentiment, codage en catégorie, proximité sémantique) et extraction de courtes citations de document sont les moins énergivores
+          - Classification d'image (Google Vision or Azure Computer Vision) : pas beaucoup plus énergivore, suivi par la détection d'objets
+          - Interaction textuelle "classique" avec un petit modèle (quelques phrases) ~24x plus énergivore que la classification de texte
+          - Interaction textuelle "classique" avec ChatGPT (réponse courte, résumé) ~200x plus énergivore (soit ~0.42Wh)
+          - Pour une interaction longue ça peut monter à 1000x plus
+          - Taille du contexte (le modèle prend toute la conversation en entrée) : la quantité de calcul augmente avec le carré du nombre de tokens en entrée
+          - Choix du modèles (petit ou grand, instantanée ou raisonnement, tel ou tel pays)
+        </p>
+        <hr/>
+        <p>
+          Facteurs clés (variation : 0.3WH à >10Wh/prompt):
+          - Taille du modèle
+          - Type de requête (c'est l'aspect génératif qui est consommateur)
+          - Taille du contexte
+          - Paramètres d'utilisation (instantané vs raisonnement)
+          - Pays où le modèle est déployé
+        </p>
         <hr/>
         <h3 id="iii-6-tableau-recapitulatif">III.6 : Tableau récapitulatif</h3>
         <table>
@@ -1703,7 +1683,7 @@
         <hr/>
         <h3 id="v-1-sujets-laisses-de-cote">V.1 : Sujets laissés de côté</h3>
         <ul>
-          <li>Exploitation des données personnelles <a data-id="4" class="footnote-link">4</a></li>
+          <li>Exploitation des données personnelles <a data-id="8" class="footnote-link">8</a></li>
           <li>Exploitation des travailleur.euse.s</li>
         </ul>
         <hr/>
@@ -1788,7 +1768,19 @@
           </li>
           <li id="footnote-2" class="footnote"> https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact</li>
           <li id="footnote-3" class="footnote"> Tous les chiffres viennent de https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact</li>
-          <li id="footnote-4" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
+          <li id="footnote-4" class="footnote"> Ordre de grandeur : 420 000 arbres sur 10 ans</li>
+          <li id="footnote-5" class="footnote"> Ordre de grandeur : 237 piscines olympiques</li>
+          <li id="footnote-6" class="footnote">
+            Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
+            <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
+            . https://doi.org/10.53328/INR26RMA002
+          </li>
+          <li id="footnote-7" class="footnote">
+            Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
+            <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
+            . https://doi.org/10.53328/INR26RMA002
+          </li>
+          <li id="footnote-8" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
         </ol>
       </div>
       <div id="board-notes" class="invisible">
@@ -1804,7 +1796,19 @@
           </li>
           <li id="footnote-2" class="footnote"> https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact</li>
           <li id="footnote-3" class="footnote"> Tous les chiffres viennent de https://web.archive.org/web/20260410195102/https://aipaypercrawl.com/articles/ai-crawler-environmental-impact</li>
-          <li id="footnote-4" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
+          <li id="footnote-4" class="footnote"> Ordre de grandeur : 420 000 arbres sur 10 ans</li>
+          <li id="footnote-5" class="footnote"> Ordre de grandeur : 237 piscines olympiques</li>
+          <li id="footnote-6" class="footnote">
+            Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
+            <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
+            . https://doi.org/10.53328/INR26RMA002
+          </li>
+          <li id="footnote-7" class="footnote">
+            Aczel, M., Chamanara, S., Matin, M., Farsi, A., Marwala, T., & Madani, K. (2026). 
+            <emph>The Environmental Cost of AI’s Energy Use: Carbon, Water and Land Footprints</emph>
+            . https://doi.org/10.53328/INR26RMA002
+          </li>
+          <li id="footnote-8" class="footnote"> https://www.amnesty.org/fr/latest/news/2026/05/global-enormous-data-pipelines-powering-major-generative-ai-systems-are-rooted-in-mass-invasions-of-privacy-by-design/</li>
         </ol>
       </div>
     </main>
